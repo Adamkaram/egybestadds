@@ -1,0 +1,20 @@
+{
+    "name": "Block Egbest close", 
+    "description": "for closing document request to close blockadd", 
+    "version": "1.0",
+    "manifest_version": 3, 
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["background" , "sessions" , "cookies"],
+    "action": {
+        "default_popup": "popup.html"
+    }, 
+    "content_scripts": [
+        {
+            "matches": ["https://echo.egybest.works/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "host_permissions": ["https://echo.egybest.works/*"]
+}
